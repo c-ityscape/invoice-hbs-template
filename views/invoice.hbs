@@ -1,0 +1,68 @@
+<div class="invoice-container">
+    <div class="invoice-header">
+        <div class="invoice-title">INVOICE</div>
+        <div class="invoice-number">{{invoiceNumber}}</div>
+    </div>
+    <div class="invoice-details">
+        <div class="company-details">
+            <h3>ABSerp</h3>
+            <p><strong>Address: </strong>North phase Industrial Estate, 42, 5th Cross St, Kalaimagal Nagar, Ekkatuthangal, Chennai, Tamil Nadu 600032</p>
+            <p><strong>Phone: </strong> 98765 43210</p>
+            <p><strong>GSTIN: </strong> 673786278013201</p>
+        </div>
+        <div class="company-logo">
+            <img src="/logo.png" alt="Company Logo">
+        </div>
+    </div>
+    <hr>
+    <div class="receiver-details">
+        <div class="receiver-info">
+            <h3>RECEIVER - {{receiver.companyName}}</h3>
+            <p><strong>Address: </strong>{{receiver.address}}</p>
+            <p><strong>Phone: </strong>{{receiver.phone}}</p>
+            <p><strong>GSTIN: </strong>{{receiver.gstin}}</p>
+        </div>
+        <div class="order-info">
+            <p><strong>Order Date: </strong>{{orderDate}}</p>
+            <p><strong>Dispatch Date: </strong>{{dispatchDate}}</p>
+            <p><strong>Challan Date: </strong>{{challanDate}}</p>
+            <p><strong>Challan Type: </strong>{{challanType}}</p>
+        </div>
+    </div>
+    <hr>
+    <table class="item-table">
+        <thead>
+            <tr>
+                <th>SL.NO</th>
+                <th>Item Name</th>
+                <th>HSN Code</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td>{{this.slNo}}</td>
+                <td>{{this.itemName}}</td>
+                <td>{{this.hsnCode}}</td>
+                <td>{{this.quantity}}</td>
+                <td>{{this.unit}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <hr>
+    <div class="signature-section">
+        <div class="sender-signature">
+            <p><strong>SENDER - ABShrms</strong></p>
+            <hr>
+            <p>Signature</p>
+        </div>
+        <div class="receiver-signature">
+            <p><strong>RECEIVER - {{receiver.companyName}}</strong></p>
+            <hr>
+            <p>Signature</p>
+        </div>
+    </div>
+</div>
